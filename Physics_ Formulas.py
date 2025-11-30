@@ -1,12 +1,12 @@
 def loop():
-    print("select a formula")
-    print("a - velocity= distance / time")
-    print("b - force= mass * acceleration")
-    print("c - pressure= force / area")
-    print("d - density = mass / volume")
-    print("e - moment = Force * Perpendicular Distance")
+    print("Enter a formula")
+    print("a - velocity = distance/ time")
+    print("b - acceleration = velocity / time")
+    print("c - work = force * distance")
+    print("d - force = mass * acceleration")
+    print("e - density = force * time")
 
-    formula = input("Enter one of the following a, b, c, d or e: ").lower()
+    formula = input("Enter a, b, c, d or e: ").lower()
 
     if formula == "a":
         print("Velocity = distance / time")
@@ -14,78 +14,65 @@ def loop():
         time = float(input("Enter the time : "))
         velocity = distance / time
         print("velocity = ",velocity, "m/s")
-        rerun = input("Do you want to solve another problem? (yes/no): ").lower()
-        if rerun == "yes":
+        again = input("Do you want to solve another Physics formula? (Yes/No)").lower()
+
+        if again == "yes":
             loop()
-        if rerun == "no":
-            print("Thank you for using Physics Formulas")
+        else:
+            print("Thank you for using Physics formulas")
 
     elif formula == "b":
-        print("Force = mass * acceleration")
+        print("acceleration = velocity / time")
+        velocity = float(input("Enter the velocity : "))
+        time = float(input("Enter the time : "))
+        acceleration = velocity / time
+        print("acceleration = ",acceleration, "m/s^2")
+        again = input("Do you want to solve another Physics formula? (Yes/No)").lower()
+
+        if again == "yes":
+            loop()
+        else:
+            print("Thank you for using Physics formulas")
+    elif formula == "c":
+        print("work done = force * distance")
+        force = float(input("Enter the force : "))
+        distance = float(input("Enter the distance : "))
+        work  = force * distance
+        print("work done = ",work , "J")
+        again = input("Do you want to solve another Physics formula? (Yes/No)").lower()
+        if again == "yes":
+            loop()
+        else:
+            print("Thank you for using Physics formulas")
+    elif formula == "d":
+        print("force = mass * acceleration")
         mass = float(input("Enter the mass : "))
         acceleration = float(input("Enter the acceleration : "))
         force = mass * acceleration
-        print("force = ",force, "kgm/s^2")
-        rerun = input("Do you want to to solve another problem? (yes/no): ").lower()
-        if rerun == "yes":
+        print("force = ",force, "N")
+        again = input("Do you want to solve another Physics formula? (Yes/No)").lower()
+
+        if again == "yes":
             loop()
-        if rerun == "no":
-            print("Thank you for using Physics Formulas")
-
-
-    elif formula == "c":
-        print("Pressure = force / area")
-        force = float(input("Enter the force : "))
-        area = float(input("Enter the area : "))
-        pressure = force / area
-        print("pressure = ",pressure, "N/m^2")
-        rerun = input("Do you want to to solve another problem? (yes/no): ").lower()
-        if rerun == "yes":
-            loop()
-        if rerun == "no":
-            print("Thank you for using Physics Formulas")
-
-
-
-    elif formula == "d":
-        print("Density = mass / volume")
-        mass = float(input("Enter the mass : "))
-        volume = float(input("Enter the volume : "))
-        density = mass / volume
-        print("density = ",density, "kg/m^3")
-        rerun = input("Do you want to to solve another problem? (yes/no): ").lower()
-        if rerun == "yes":
-            loop()
-        if rerun == "no":
-            print("Thank you for using Physics Formulas")
-
-
+        else:
+            print("Thank you for using Physics formulas")
 
     elif formula == "e":
-        print("Moment = Force * Perpendicular Distance")
-        force = float(input("Enter the force : "))
-        perpendicular_distance = float(input("Enter the perpendicular distance : "))
-        moment = force * perpendicular_distance
-        print("moment =", moment, "N/m")
-        rerun = input("Do you want to to solve another problem? (yes/no): ").lower()
-        if rerun == "yes":
+        print("density = mass / volume")
+        mass = float(input("Enter the mass :"))
+        volume  = float(input("Enter the volume : "))
+        density = mass / volume
+        print("density =", density, "Kg/m^3")
+        again = input("Do you want to solve another Physics formula? (Yes/No)").lower()
+
+        if again == "yes":
             loop()
-        if rerun == "no":
-            print("Thank you for using Physics Formulas")
-
-
+        else:
+            print("Thank you for using Physics formulas")
     else:
-        print("Invalid formula. Please select any of the following: a, b, c, d, e.")
-        loop()
-
+        print("Invalid formula")
+    loop()
 loop()
-
-
-
-
-
-
-
 
 
 
